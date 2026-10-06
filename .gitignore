@@ -1,0 +1,9 @@
+# 第三方工具包与参考工程（体积大，不入库）
+vendor/
+# 本机自编的 QuickJS 工具链（可重建）
+toolchain/
+# 临时产物
+browser-screenshots/
+tools/ziplist.json
+tools/racer-zip.json
+*.log
