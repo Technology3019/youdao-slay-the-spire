@@ -6,6 +6,7 @@ import BattleScene from '@/components/BattleScene.vue';
 import RewardScene from '@/components/RewardScene.vue';
 import RestScene from '@/components/RestScene.vue';
 import ShopScene from '@/components/ShopScene.vue';
+import CheatScene from '@/components/CheatScene.vue';
 import ChestScene from '@/components/ChestScene.vue';
 import EventScene from '@/components/EventScene.vue';
 import DeckScene from '@/components/DeckScene.vue';
@@ -33,7 +34,7 @@ function rewardPool(charId) {
 }
 
 const index = defineComponent({
-    components: { SaveScene, TitleScene, MapScene, BattleScene, RewardScene, RestScene, ShopScene, ChestScene, EventScene, DeckScene, StubScene },
+    components: { SaveScene, TitleScene, MapScene, BattleScene, RewardScene, RestScene, ShopScene, ChestScene, EventScene, DeckScene, StubScene, CheatScene },
     data() {
         return {
             scene: 'slots',
@@ -87,6 +88,18 @@ const index = defineComponent({
             this.scene = 'map';
         },
         onPickBack() { this.scene = 'slots'; },
+        /* ---- 作弊菜单：选关页连点人物头像 10 次进入，无任何提示 ---- */
+        async onCheat() {
+            if (!this.run) return;
+            this.scene = 'cheat';
+        },
+        async onCheatBack() { this.scene = 'map'; await save.saveSlot(this.run.slot, this.run); },
+        onCheatShop() { this.scene = 'cheatshop'; },
+        async onCheatShopLeave() { this.scene = 'cheat'; await save.saveSlot(this.run.slot, this.run); },
+        onCheatRemove() {
+            if (this.run.gold < 75) return;
+            this.deckMode = 'remove'; this.deckReturn = 'cheatshop'; this.scene = 'deck';
+        },
         /* ---- 地图 ---- */
         onEnterNode(info) {
             const run = this.run;

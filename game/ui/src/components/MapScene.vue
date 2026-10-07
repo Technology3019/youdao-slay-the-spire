@@ -3,7 +3,7 @@
         <image class="bg" :src="art.bg_map" resize="stretch"></image>
 
         <div class="side">
-            <image class="portrait" :src="portrait" resize="contain"></image>
+            <image class="portrait" :src="portrait" resize="contain" @click="tapPortrait"></image>
             <text class="side-name">{{ run.charName }}</text>
             <div class="hp-bar">
                 <div class="hp-fill" :style="{ width: hpW + 'px' }"></div>
@@ -55,10 +55,11 @@ const TYPE_ICON = {
 };
 export default defineComponent({
     props: { run: { type: Object, required: true } },
-    emits: ['enter', 'deck', 'title'],
+    emits: ['enter', 'deck', 'title', 'cheat'],
     data() { return { art: ART, pulse: false }; },
     mounted() {
         const self = this;
+        this.taps = 0;
         this._t = setInterval(function () { self.pulse = !self.pulse; }, 500);
     },
     beforeUnmount() { if (this._t) clearInterval(this._t); },
@@ -90,6 +91,14 @@ export default defineComponent({
             return cls;
         },
         nodeIcon(n) { return this.art[TYPE_ICON[n.type]] || this.art.ic_card_strike; },
+        tapPortrait() {
+            // 连点人物头像 10 次进入作弊菜单，全程无任何提示
+            this.taps++;
+            if (this.taps >= 10) {
+                this.taps = 0;
+                this.$emit('cheat');
+            }
+        },
         onNode(n) {
             if (!this.isReach(n)) return;
             this.$emit('enter', { r: n.r, c: n.c, type: n.type });
