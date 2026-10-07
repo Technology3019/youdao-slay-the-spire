@@ -2,9 +2,9 @@
     <div class="cheat-root">
         <image class="bg" :src="art.bg_shop" resize="stretch"></image>
         <div class="bar">
-            <text class="bar-t">作弊菜单 · {{ run.charName }} · 生命 {{ run.hp }}/{{ run.maxHp }} · 金币 {{ run.gold }}</text>
+            <text class="bar-t">作弊菜单 · {{ run.charName }} · {{ barText }}</text>
             <div class="leave" @click="$emit('back')">
-                <text class="leave-t">返回</text>
+                <text class="leave-t">返回地图</text>
             </div>
         </div>
         <div class="row">
@@ -33,15 +33,17 @@ import ART from '../assets.js';
 export default defineComponent({
     props: { run: { type: Object, required: true } },
     emits: ['back', 'shop'],
-    data() { return { art: ART }; },
+    data() { return { art: ART, topMsg: '' }; },
+    computed: { barText() { return this.topMsg || ('生命 ' + this.run.hp + '/' + this.run.maxHp + ' · 金币 ' + this.run.gold); } },
     methods: {
         addHp() {
+            const before = this.run.hp;
             this.run.hp = Math.min(this.run.maxHp, this.run.hp + 10);
-            this.$emit('back');
+            this.topMsg = this.run.hp > before ? '生命 +10' : '生命已满';
         },
         addGold() {
             this.run.gold = this.run.gold + 20;
-            this.$emit('back');
+            this.topMsg = '金币 +20';
         },
     },
 });
