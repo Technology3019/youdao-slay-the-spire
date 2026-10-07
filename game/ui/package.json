@@ -1,7 +1,7 @@
 {
   "name": "miniapp-template",
   "appid": "8001111111111111",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A miniapp template for YouDao Dictionary Pen",
   "icon": "app_icon.png",
   "quickjs": {

@@ -27,22 +27,27 @@ function genMap(act, rnd) {
   }
   for (let r = 0; r < ROWS - 1; r++) {
     const cur = rows[r], nxt = rows[r + 1];
-    const covered = new Set();
+    const nMax = nxt.length;
     for (const n of cur) {
-      const lo = Math.max(0, n.c - 1), hi = Math.min(nxt.length - 1, n.c + 1);
-      const first = rint(rnd, lo, hi);
-      n.next.push(first); covered.add(first);
+      const lo = Math.max(0, Math.min(n.c - 1, nMax - 1));
+      const hi = Math.min(nMax - 1, n.c + 1);
+      n.next.push(lo + Math.floor(rnd() * (hi - lo + 1)));
       if (rnd() < 0.35) {
-        const second = rint(rnd, lo, hi);
-        if (second !== first) { n.next.push(second); covered.add(second); }
+        const c2 = lo + Math.floor(rnd() * (hi - lo + 1));
+        if (n.next.indexOf(c2) < 0) n.next.push(c2);
       }
     }
-    for (let c = 0; c < nxt.length; c++) {
-      if (!covered.has(c)) {
-        let best = 0, bd = 1e9;
-        for (let i = 0; i < cur.length; i++) { const dd = Math.abs(i - c); if (dd < bd) { bd = dd; best = i; } }
-        cur[best].next.push(c);
+    // 保证下一行每个节点都至少被一条连线覆盖
+    for (let c = 0; c < nMax; c++) {
+      let ok = false;
+      for (const n of cur) if (n.next.indexOf(c) >= 0) { ok = true; break; }
+      if (ok) continue;
+      let best = 0, bd = 1e9;
+      for (let i = 0; i < cur.length; i++) {
+        const dd = Math.abs(i - c);
+        if (dd < bd) { bd = dd; best = i; }
       }
+      cur[best].next.push(c);
     }
   }
   const boss = { r: ROWS, c: 0, type: 'boss', next: [] };
@@ -56,11 +61,14 @@ function nodeAt(map, r, c) {
   return c >= 0 && c < row.length ? row[c] : null;
 }
 function canMove(map, curRow, curCol, nextRow, nextCol) {
+  // 目标节点必须真实存在，否则会出现"高亮但点不动"的假可达
+  if (nextRow === ROWS) return nextCol === 0 && curRow === ROWS - 1;
+  if (!nodeAt(map, nextRow, nextCol)) return false;
   if (curRow === -1) return nextRow === 0;
   if (nextRow === curRow + 1) {
     if (curRow === ROWS - 1) return nextCol === 0;
     const n = nodeAt(map, curRow, curCol);
-    return n ? n.next.includes(nextCol) : false;
+    return n ? n.next.indexOf(nextCol) >= 0 : false;
   }
   return false;
 }
