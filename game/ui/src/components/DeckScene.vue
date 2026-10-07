@@ -8,7 +8,7 @@
                 <text class="back-t">返回</text>
             </div>
         </div>
-        <scroll class="grid" scroll-y="true">
+        <scroller class="grid" scrollY="true">
             <div class="grid-inner">
                 <div v-for="(c, i) in run.deck" :key="i" class="cell" @click="onPick(i)">
                     <image class="frame" :src="frameOf(c)" resize="stretch"></image>
@@ -16,7 +16,7 @@
                     <text class="cname">{{ nameOf(c) }}</text>
                 </div>
             </div>
-        </scroll>
+        </scroller>
         <div class="mask" v-if="detail" @click="detail = null">
             <image class="d-bg" :src="art.bg_map" resize="stretch"></image>
             <div class="d-wrap">
@@ -86,7 +86,7 @@ export default defineComponent({
 .back { width: 11.250vw; height: 9.449vh; background-color: #33334d; border-radius: 2.362vh; align-items: center; justify-content: center; }
 .back-t { font-size: 1.88vw; color: #ccccdd; }
 .grid { position: absolute; left: 2%; top: 14.961vh; width: 96%; height: 82.677vh; }
-.grid-inner { flex-direction: row; flex-wrap: wrap; padding-bottom: 2vh; }
+.grid-inner { flex-direction: row; flex-wrap: wrap; width: 100%; padding-bottom: 3vh; }
 .cell { width: 7.500vw; height: 32.283vh; margin: 1.181vh; }
 .frame { width: 7.500vw; height: 32.283vh; position: absolute; left: 0; top: 0; }
 .up-mark { position: absolute; right: 0.375vw; top: 0; font-size: 2.19vw; color: #7dffb0; font-weight: bold; }
