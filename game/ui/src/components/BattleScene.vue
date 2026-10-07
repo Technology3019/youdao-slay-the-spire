@@ -9,7 +9,7 @@
                 <div class="p-col">
                     <text class="p-name">{{ run.charName }}</text>
                     <div class="hp-bar">
-                        <div class="hp-fill" :style="{ width: hpW + 'px' }"></div>
+                        <div class="hp-fill" :style="{ width: hpW }"></div>
                         <text class="hp-text">{{ b.player.hp }}/{{ b.player.maxHp }}</text>
                     </div>
                     <div class="badge-row">
@@ -46,7 +46,7 @@
                     <image class="e-art" :src="art[e.def.art]" :style="enemyStyle(e)" resize="contain"></image>
                     <text class="e-name">{{ e.def.name }}</text>
                     <div class="hp-bar e-hp">
-                        <div class="hp-fill e-hp-fill" :style="{ width: eHpW(e) + 'px' }"></div>
+                        <div class="hp-fill e-hp-fill" :style="{ width: eHpW(e) }"></div>
                         <text class="hp-text e-hp-text">{{ e.hp }}/{{ e.maxHp }}</text>
                     </div>
                     <div class="stat-row">
@@ -118,7 +118,7 @@ export default defineComponent({
     beforeUnmount() { if (this._t) clearInterval(this._t); },
     computed: {
         portrait() { return ART['char_' + this.run.char + '_portrait'] || ART.char_ironclad_portrait; },
-        hpW() { return Math.max(0, Math.round(88 * this.b.player.hp / this.b.player.maxHp)); },
+        hpW() { return Math.max(0, Math.round(93.1 * this.b.player.hp / this.b.player.maxHp)) + '%'; },
         stanceIcon() {
             const m = { anger: 'stance_anger', calm: 'stance_calm', divinity: 'stance_divine' };
             return ART[m[this.b.player.stance]] || ART.stance_calm;
@@ -153,11 +153,11 @@ export default defineComponent({
         },
         enemyStyle(e) {
             const t = e.def.tier;
-            if (t === 'boss') return { width: '76px', height: '86px' };
-            if (t === 'elite') return { width: '64px', height: '74px' };
-            return { width: '58px', height: '66px' };
+            if (t === 'boss') return { width: '9.500vw', height: '33.858vh' };
+            if (t === 'elite') return { width: '8.000vw', height: '29.134vh' };
+            return { width: '7.250vw', height: '25.984vh' };
         },
-        eHpW(e) { return Math.max(0, Math.round(72 * e.hp / e.maxHp)); },
+        eHpW(e) { return Math.max(0, Math.round(92.3 * e.hp / e.maxHp)) + '%'; },
         affordable(c) { return this.b.player.energy >= cardsDb.getCard(c.id).cost; },
         cardType(c) { const d = cardsDb.getCard(c.id); return d.type === 'attack' ? 'attack' : d.type === 'skill' ? 'skill' : 'power'; },
         cardCost(c) { return cardsDb.getCard(c.id).cost; },
@@ -192,57 +192,57 @@ export default defineComponent({
 
 <style scoped>
 .battle-root { width: 100%; height: 100%; }
-.bg { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
-.top-area { position: absolute; left: 4px; top: 4px; width: 98%; height: 142px; flex-direction: row; }
-.player-panel { width: 196px; height: 140px; flex-direction: row; background-color: rgba(10,10,20,0.55); border-radius: 8px; padding: 5px; }
-.p-portrait { width: 60px; height: 60px; }
-.p-col { flex-direction: column; margin-left: 5px; flex-grow: 1; }
+.bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.top-area { position: absolute; left: 0.500vw; top: 1.575vh; width: 98%; height: 55.906vh; flex-direction: row; }
+.player-panel { width: 24.500vw; height: 55.118vh; flex-direction: row; background-color: rgba(10,10,20,0.55); border-radius: 3.150vh; padding: 1.969vh; }
+.p-portrait { width: 7.500vw; height: 7.500vw; }
+.p-col { flex-direction: column; margin-left: 0.625vw; flex-grow: 1; }
 .p-name { font-size: 1.88vw; color: #e8d9a0; font-weight: bold; }
-.hp-bar { width: 116px; height: 13px; background-color: #3a1018; border-radius: 6px; margin-top: 3px; }
-.hp-fill { height: 13px; background-color: #d84040; border-radius: 6px; }
-.hp-text { position: absolute; left: 0px; top: 0px; width: 116px; height: 13px; font-size: 1.41vw; color: #ffffff; text-align: center; line-height: 13px; }
-.badge-row { flex-direction: row; margin-top: 3px; align-items: center; }
-.block-badge { flex-direction: row; align-items: center; background-color: rgba(30,60,110,0.8); border-radius: 6px; padding-left: 3px; padding-right: 4px; height: 15px; }
-.energy-badge { flex-direction: row; align-items: center; background-color: rgba(140,100,20,0.85); border-radius: 6px; padding-left: 4px; padding-right: 4px; height: 15px; margin-left: 4px; }
+.hp-bar { width: 14.500vw; height: 5.118vh; background-color: #3a1018; border-radius: 2.362vh; margin-top: 1.181vh; }
+.hp-fill { height: 5.118vh; background-color: #d84040; border-radius: 2.362vh; }
+.hp-text { position: absolute; left: 0; top: 0; width: 14.500vw; height: 5.118vh; font-size: 1.41vw; color: #ffffff; text-align: center; line-height: 5.118vh; }
+.badge-row { flex-direction: row; margin-top: 1.181vh; align-items: center; }
+.block-badge { flex-direction: row; align-items: center; background-color: rgba(30,60,110,0.8); border-radius: 2.362vh; padding-left: 0.375vw; padding-right: 0.500vw; height: 5.906vh; }
+.energy-badge { flex-direction: row; align-items: center; background-color: rgba(140,100,20,0.85); border-radius: 2.362vh; padding-left: 0.500vw; padding-right: 0.500vw; height: 5.906vh; margin-left: 0.500vw; }
 .badge-text { font-size: 1.41vw; color: #cfe8ff; }
 .energy-text { font-size: 1.41vw; color: #ffe9a0; }
-.mini { width: 12px; height: 12px; }
-.stance { width: 16px; height: 16px; margin-left: 4px; }
-.stat-row { flex-direction: row; margin-top: 2px; flex-wrap: wrap; }
-.stat { flex-direction: row; align-items: center; margin-right: 4px; }
-.stat-text { font-size: 1.25vw; color: #f0e8d8; margin-left: 1px; }
-.orb-row { flex-direction: row; margin-top: 3px; }
-.orb { width: 20px; height: 20px; margin-right: 3px; }
+.mini { width: 1.500vw; height: 1.500vw; }
+.stance { width: 2.000vw; height: 2.000vw; margin-left: 0.500vw; }
+.stat-row { flex-direction: row; margin-top: 0.787vh; flex-wrap: wrap; }
+.stat { flex-direction: row; align-items: center; margin-right: 0.500vw; }
+.stat-text { font-size: 1.25vw; color: #f0e8d8; margin-left: 0.125vw; }
+.orb-row { flex-direction: row; margin-top: 1.181vh; }
+.orb { width: 2.500vw; height: 2.500vw; margin-right: 0.375vw; }
 .orb-empty { opacity: 0.25; }
-.enemy-area { flex-grow: 1; height: 140px; flex-direction: row; margin-left: 4px; }
-.enemy { flex-grow: 1; height: 140px; flex-direction: column; align-items: center; border-radius: 8px; background-color: rgba(10,10,20,0.35); margin-right: 4px; }
+.enemy-area { flex-grow: 1; height: 55.118vh; flex-direction: row; margin-left: 0.500vw; }
+.enemy { flex-grow: 1; height: 55.118vh; flex-direction: column; align-items: center; border-radius: 3.150vh; background-color: rgba(10,10,20,0.35); margin-right: 0.500vw; }
 .dead { opacity: 0.25; }
-.targeted { border-width: 2px; border-color: #e8b830; }
-.intent { flex-direction: row; align-items: center; height: 17px; }
-.intent-icon { width: 16px; height: 16px; }
-.intent-text { font-size: 1.72vw; color: #ffd8a0; font-weight: bold; margin-left: 2px; }
-.e-art { margin-top: 1px; }
+.targeted { border-width: 0.787vh; border-color: #e8b830; }
+.intent { flex-direction: row; align-items: center; height: 6.693vh; }
+.intent-icon { width: 2.000vw; height: 2.000vw; }
+.intent-text { font-size: 1.72vw; color: #ffd8a0; font-weight: bold; margin-left: 0.250vw; }
+.e-art { margin-top: 0.394vh; }
 .e-name { font-size: 1.25vw; color: #d8d0c0; }
-.e-hp { width: 78px; height: 11px; margin-top: 1px; }
-.e-hp-fill { height: 11px; }
-.e-hp-text { width: 78px; height: 11px; line-height: 11px; font-size: 1.25vw; }
-.mid-bar { position: absolute; left: 6px; top: 148px; width: 97%; height: 26px; flex-direction: row; align-items: center; }
+.e-hp { width: 9.750vw; height: 4.331vh; margin-top: 0.394vh; }
+.e-hp-fill { height: 4.331vh; }
+.e-hp-text { width: 9.750vw; height: 4.331vh; line-height: 4.331vh; font-size: 1.25vw; }
+.mid-bar { position: absolute; left: 0.750vw; top: 58.268vh; width: 97%; height: 10.236vh; flex-direction: row; align-items: center; }
 .log-text { flex-grow: 1; font-size: 1.56vw; color: #c8c0d8; }
 .mid-right { flex-direction: row; align-items: center; }
-.pile-text { font-size: 1.41vw; color: #9990b0; margin-right: 6px; }
+.pile-text { font-size: 1.41vw; color: #9990b0; margin-right: 0.750vw; }
 .pulse { background-color: #b04545; }
 .glow { opacity: 0.7; }
-.end-btn { width: 84px; height: 24px; background-color: #8a3030; border-radius: 6px; align-items: center; justify-content: center; }
+.end-btn { width: 10.500vw; height: 9.449vh; background-color: #8a3030; border-radius: 2.362vh; align-items: center; justify-content: center; }
 .end-text { font-size: 1.72vw; color: #ffe8d0; font-weight: bold; }
-.hand { position: absolute; left: 4px; bottom: 4px; width: 98%; height: 76px; flex-direction: row; align-items: flex-end; flex-wrap: wrap; }
-.card-slot { width: 52px; height: 72px; margin-left: 3px; }
-.picked { border-width: 2px; border-color: #e8b830; }
+.hand { position: absolute; left: 0.500vw; bottom: 1.575vh; width: 98%; height: 29.921vh; flex-direction: row; align-items: flex-end; flex-wrap: wrap; }
+.card-slot { width: 6.500vw; height: 28.346vh; margin-left: 0.375vw; }
+.picked { border-width: 0.787vh; border-color: #e8b830; }
 .unaffordable { opacity: 0.55; }
-.frame { width: 52px; height: 72px; position: absolute; left: 0px; top: 0px; }
-.cost-dot { position: absolute; left: 2px; top: 2px; width: 14px; height: 14px; border-radius: 7px; background-color: #f0ead0; align-items: center; justify-content: center; }
+.frame { width: 6.500vw; height: 28.346vh; position: absolute; left: 0; top: 0; }
+.cost-dot { position: absolute; left: 0.250vw; top: 0.787vh; width: 1.750vw; height: 1.750vw; border-radius: 0.875vw; background-color: #f0ead0; align-items: center; justify-content: center; }
 .cost-text { font-size: 1.41vw; color: #151320; font-weight: bold; }
-.card-name { position: absolute; left: 0px; top: 18px; width: 52px; font-size: 1.41vw; color: #f0e8d8; text-align: center; }
-.card-desc { position: absolute; left: 3px; top: 31px; width: 46px; height: 38px; font-size: 1.09vw; color: #b8b0c8; text-align: center; overflow: hidden; }
-.hint { position: absolute; right: 6px; bottom: 80px; width: 66px; height: 18px; background-color: rgba(232,184,48,0.9); border-radius: 5px; align-items: center; justify-content: center; }
+.card-name { position: absolute; left: 0; top: 7.087vh; width: 6.500vw; font-size: 1.41vw; color: #f0e8d8; text-align: center; }
+.card-desc { position: absolute; left: 0.375vw; top: 12.205vh; width: 5.750vw; height: 14.961vh; font-size: 1.09vw; color: #b8b0c8; text-align: center; overflow: hidden; }
+.hint { position: absolute; right: 0.750vw; bottom: 31.496vh; width: 8.250vw; height: 7.087vh; background-color: rgba(232,184,48,0.9); border-radius: 1.969vh; align-items: center; justify-content: center; }
 .hint-text { font-size: 1.56vw; color: #151320; font-weight: bold; }
 </style>

@@ -50,14 +50,14 @@ export default defineComponent({
 </script>
 <style scoped>
 .deck-root { width: 100%; height: 100%; }
-.bg { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0.6; }
-.bar { position: absolute; left: 8px; top: 6px; width: 98%; height: 26px; flex-direction: row; align-items: center; }
+.bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0.6; }
+.bar { position: absolute; left: 1.000vw; top: 2.362vh; width: 98%; height: 10.236vh; flex-direction: row; align-items: center; }
 .bar-t { flex-grow: 1; font-size: 2.03vw; color: #e8d9a0; font-weight: bold; }
-.back { width: 90px; height: 24px; background-color: #33334d; border-radius: 6px; align-items: center; justify-content: center; }
+.back { width: 11.250vw; height: 9.449vh; background-color: #33334d; border-radius: 2.362vh; align-items: center; justify-content: center; }
 .back-t { font-size: 1.88vw; color: #ccccdd; }
-.grid { position: absolute; left: 2%; top: 38px; width: 96%; height: 210px; flex-direction: row; flex-wrap: wrap; }
-.cell { width: 60px; height: 82px; margin: 3px; }
-.frame { width: 60px; height: 82px; position: absolute; left: 0px; top: 0px; }
-.up-mark { position: absolute; right: 3px; top: 0px; font-size: 2.19vw; color: #7dffb0; font-weight: bold; }
-.cname { position: absolute; left: 0px; top: 26px; width: 60px; font-size: 1.41vw; color: #f0e8d8; text-align: center; }
+.grid { position: absolute; left: 2%; top: 14.961vh; width: 96%; height: 82.677vh; flex-direction: row; flex-wrap: wrap; }
+.cell { width: 7.500vw; height: 32.283vh; margin: 1.181vh; }
+.frame { width: 7.500vw; height: 32.283vh; position: absolute; left: 0; top: 0; }
+.up-mark { position: absolute; right: 0.375vw; top: 0; font-size: 2.19vw; color: #7dffb0; font-weight: bold; }
+.cname { position: absolute; left: 0; top: 10.236vh; width: 7.500vw; font-size: 1.41vw; color: #f0e8d8; text-align: center; }
 </style>

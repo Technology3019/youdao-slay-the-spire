@@ -85,17 +85,17 @@ export default defineComponent({
 </script>
 <style scoped>
 .shop-root { width: 100%; height: 100%; }
-.bg { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
-.bar { position: absolute; left: 8px; top: 6px; width: 98%; height: 26px; flex-direction: row; align-items: center; }
+.bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.bar { position: absolute; left: 1.000vw; top: 2.362vh; width: 98%; height: 10.236vh; flex-direction: row; align-items: center; }
 .bar-t { flex-grow: 1; font-size: 2.03vw; color: #ffd76a; font-weight: bold; }
-.leave { width: 90px; height: 24px; background-color: #33334d; border-radius: 6px; align-items: center; justify-content: center; }
+.leave { width: 11.250vw; height: 9.449vh; background-color: #33334d; border-radius: 2.362vh; align-items: center; justify-content: center; }
 .leave-t { font-size: 1.88vw; color: #ccccdd; }
-.row { position: absolute; left: 6%; top: 44px; width: 88%; height: 200px; flex-direction: row; justify-content: center; }
-.slot { width: 88px; height: 124px; margin: 0px 10px; }
-.frame { width: 88px; height: 124px; position: absolute; left: 0px; top: 0px; }
-.cname { position: absolute; left: 0px; top: 24px; width: 88px; font-size: 1.88vw; color: #f0e8d8; text-align: center; }
-.cdesc { position: absolute; left: 7px; top: 44px; width: 74px; height: 56px; font-size: 1.41vw; color: #c8c0d8; text-align: center; overflow: hidden; }
-.price { position: absolute; left: 14px; bottom: 2px; width: 60px; height: 18px; background-color: #6a5420; border-radius: 5px; align-items: center; justify-content: center; }
+.row { position: absolute; left: 6%; top: 17.323vh; width: 88%; height: 78.740vh; flex-direction: row; justify-content: center; }
+.slot { width: 11.000vw; height: 48.819vh; margin: 0 1.250vw; }
+.frame { width: 11.000vw; height: 48.819vh; position: absolute; left: 0; top: 0; }
+.cname { position: absolute; left: 0; top: 9.449vh; width: 11.000vw; font-size: 1.88vw; color: #f0e8d8; text-align: center; }
+.cdesc { position: absolute; left: 0.875vw; top: 17.323vh; width: 9.250vw; height: 22.047vh; font-size: 1.41vw; color: #c8c0d8; text-align: center; overflow: hidden; }
+.price { position: absolute; left: 1.750vw; bottom: 0.787vh; width: 7.500vw; height: 7.087vh; background-color: #6a5420; border-radius: 1.969vh; align-items: center; justify-content: center; }
 .cant { background-color: #403040; opacity: 0.7; }
 .price-t { font-size: 1.56vw; color: #ffe9a0; }
 </style>

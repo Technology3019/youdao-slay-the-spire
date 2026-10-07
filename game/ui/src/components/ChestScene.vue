@@ -34,10 +34,10 @@ export default defineComponent({
 </script>
 <style scoped>
 .chest-root { width: 100%; height: 100%; }
-.bg { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
-.panel { position: absolute; left: 30%; top: 50px; width: 40%; height: 150px; flex-direction: column; align-items: center; background-color: rgba(12,12,22,0.85); border-radius: 10px; }
-.title { font-size: 3.13vw; color: #e8d9a0; font-weight: bold; margin-top: 12px; }
-.sub { font-size: 1.88vw; color: #c8c0d8; margin-top: 8px; width: 250px; text-align: center; }
-.opt { width: 130px; height: 32px; background-color: #6a5420; border-radius: 8px; align-items: center; justify-content: center; margin-top: 10px; }
+.bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.panel { position: absolute; left: 30%; top: 19.685vh; width: 40%; height: 59.055vh; flex-direction: column; align-items: center; background-color: rgba(12,12,22,0.85); border-radius: 3.937vh; }
+.title { font-size: 3.13vw; color: #e8d9a0; font-weight: bold; margin-top: 4.724vh; }
+.sub { font-size: 1.88vw; color: #c8c0d8; margin-top: 3.150vh; width: 31.250vw; text-align: center; }
+.opt { width: 16.250vw; height: 12.598vh; background-color: #6a5420; border-radius: 3.150vh; align-items: center; justify-content: center; margin-top: 3.937vh; }
 .opt-t { font-size: 2.03vw; color: #ffe9a0; }
 </style>

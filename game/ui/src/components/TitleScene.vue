@@ -62,14 +62,14 @@ export default defineComponent({
 
 <style scoped>
 .title-wrap {
-    width: 800px;
-    height: 254px;
+    width: 100.000vw;
+    height: 100.000vh;
     flex-direction: row;
     align-items: center;
 }
 .brand {
-    width: 148px;
-    margin-left: 24px;
+    width: 18.500vw;
+    margin-left: 3.000vw;
     flex-direction: column;
     align-items: center;
 }
@@ -81,32 +81,32 @@ export default defineComponent({
 .sub-text {
     font-size: 2.03vw;
     color: #8888aa;
-    margin-top: 14px;
+    margin-top: 5.512vh;
 }
 .pulse { background-color: #2e2e48; }
 .char-btn {
     flex-grow: 1;
-    width: 96px;
-    height: 210px;
-    margin-left: 12px;
-    padding-top: 10px;
-    border-radius: 8px;
+    width: 12.000vw;
+    height: 82.677vh;
+    margin-left: 1.500vw;
+    padding-top: 3.937vh;
+    border-radius: 3.150vh;
     background-color: #232333;
     align-items: center;
 }
 .portrait {
-    width: 62px;
-    height: 62px;
+    width: 7.750vw;
+    height: 7.750vw;
 }
 .char-name {
     font-size: 2.66vw;
     color: #f0f0f0;
     font-weight: bold;
-    margin-top: 8px;
+    margin-top: 3.150vh;
 }
 .char-desc {
     font-size: 1.72vw;
     color: #9999bb;
-    margin-top: 5px;
+    margin-top: 1.969vh;
 }
 </style>

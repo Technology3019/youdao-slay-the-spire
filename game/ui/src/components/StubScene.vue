@@ -22,8 +22,8 @@ export default defineComponent({
 
 <style scoped>
 .stub-wrap {
-    width: 800px;
-    height: 254px;
+    width: 100.000vw;
+    height: 100.000vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -34,11 +34,11 @@ export default defineComponent({
     font-weight: bold;
 }
 .back-btn {
-    width: 120px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    margin-top: 18px;
-    border-radius: 6px;
+    width: 15.000vw;
+    padding-top: 3.150vh;
+    padding-bottom: 3.150vh;
+    margin-top: 7.087vh;
+    border-radius: 2.362vh;
     background-color: #33334d;
     align-items: center;
 }

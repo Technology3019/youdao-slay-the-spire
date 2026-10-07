@@ -32,12 +32,12 @@ export default defineComponent({
 </script>
 <style scoped>
 .event-root { width: 100%; height: 100%; }
-.bg { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
-.panel { position: absolute; left: 22%; top: 12px; width: 56%; height: 92%; flex-direction: column; align-items: center; background-color: rgba(14,10,24,0.88); border-radius: 10px; }
-.title { font-size: 2.97vw; color: #d8b8ff; font-weight: bold; margin-top: 10px; }
-.body { font-size: 1.72vw; color: #c8c0d8; margin-top: 6px; width: 90%; text-align: center; }
-.result { font-size: 1.88vw; color: #7dffb0; margin-top: 5px; width: 90%; text-align: center; }
-.opt { width: 78%; height: 28px; background-color: #2e2a44; border-radius: 7px; align-items: center; justify-content: center; margin-top: 6px; }
+.bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.panel { position: absolute; left: 22%; top: 4.724vh; width: 56%; height: 92%; flex-direction: column; align-items: center; background-color: rgba(14,10,24,0.88); border-radius: 3.937vh; }
+.title { font-size: 2.97vw; color: #d8b8ff; font-weight: bold; margin-top: 3.937vh; }
+.body { font-size: 1.72vw; color: #c8c0d8; margin-top: 2.362vh; width: 90%; text-align: center; }
+.result { font-size: 1.88vw; color: #7dffb0; margin-top: 1.969vh; width: 90%; text-align: center; }
+.opt { width: 78%; height: 11.024vh; background-color: #2e2a44; border-radius: 2.756vh; align-items: center; justify-content: center; margin-top: 2.362vh; }
 .opt-leave { background-color: #3d5a3d; }
 .opt-t { font-size: 1.88vw; color: #ccccdd; }
 </style>

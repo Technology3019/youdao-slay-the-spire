@@ -51,20 +51,20 @@ export default defineComponent({
 
 <style scoped>
 .save-root { width: 100%; height: 100%; flex-direction: column; align-items: center; }
-.bg { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
-.big-title { font-size: 4.69vw; color: #e8d9a0; font-weight: bold; margin-top: 14px; }
-.sub-title { font-size: 1.88vw; color: #9999bb; margin-top: 4px; margin-bottom: 10px; }
+.bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.big-title { font-size: 4.69vw; color: #e8d9a0; font-weight: bold; margin-top: 5.512vh; }
+.sub-title { font-size: 1.88vw; color: #9999bb; margin-top: 1.575vh; margin-bottom: 3.937vh; }
 .pulse { color: #fff2c0; }
-.pkg-name { position: absolute; left: 0px; bottom: 4px; width: 100%; font-size: 1.56vw; color: #7777a0; text-align: center; }
+.pkg-name { position: absolute; left: 0; bottom: 1.575vh; width: 100%; font-size: 1.56vw; color: #7777a0; text-align: center; }
 .slots { flex-direction: row; justify-content: center; }
 .slot-col { flex-direction: column; align-items: center; }
-.slot { flex-grow: 1; width: 150px; height: 158px; margin: 0px 9px; background-color: rgba(20,20,34,0.88); border-radius: 10px; flex-direction: column; align-items: center; padding-top: 10px; }
+.slot { flex-grow: 1; width: 18.750vw; height: 62.205vh; margin: 0 1.125vw; background-color: rgba(20,20,34,0.88); border-radius: 3.937vh; flex-direction: column; align-items: center; padding-top: 3.937vh; }
 .slot-no { font-size: 2.03vw; color: #8888aa; }
-.slot-char { font-size: 2.97vw; color: #f0e8d8; font-weight: bold; margin-top: 7px; }
-.slot-empty { font-size: 2.66vw; color: #666688; margin-top: 22px; }
-.slot-line { font-size: 1.56vw; color: #b8b0c8; margin-top: 5px; }
-.mini-hp { width: 76px; height: 10px; background-color: #3a1018; border-radius: 5px; margin-top: 7px; }
-.mini-fill { height: 10px; background-color: #d84040; border-radius: 5px; }
-.del { width: 120px; height: 30px; background-color: #5a2a36; border-radius: 6px; align-items: center; justify-content: center; margin-top: 8px; }
+.slot-char { font-size: 2.97vw; color: #f0e8d8; font-weight: bold; margin-top: 2.756vh; }
+.slot-empty { font-size: 2.66vw; color: #666688; margin-top: 8.661vh; }
+.slot-line { font-size: 1.56vw; color: #b8b0c8; margin-top: 1.969vh; }
+.mini-hp { width: 9.500vw; height: 3.937vh; background-color: #3a1018; border-radius: 1.969vh; margin-top: 2.756vh; }
+.mini-fill { height: 3.937vh; background-color: #d84040; border-radius: 1.969vh; }
+.del { width: 15.000vw; height: 11.811vh; background-color: #5a2a36; border-radius: 2.362vh; align-items: center; justify-content: center; margin-top: 3.150vh; }
 .del-t { font-size: 1.88vw; color: #f0b0b0; }
 </style>

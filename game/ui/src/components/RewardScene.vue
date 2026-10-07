@@ -45,18 +45,18 @@ export default defineComponent({
 
 <style scoped>
 .reward-root { width: 100%; height: 100%; }
-.bg { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
-.panel { position: absolute; left: 22%; top: 6px; width: 56%; height: 95%; flex-direction: column; align-items: center; background-color: rgba(12,12,22,0.85); border-radius: 10px; }
-.title { font-size: 2.66vw; color: #e8d9a0; font-weight: bold; margin-top: 6px; }
-.gold { font-size: 2.03vw; color: #ffd76a; margin-top: 6px; }
-.sub { font-size: 1.72vw; color: #b8b0c8; margin-top: 4px; }
-.cards { flex-direction: row; margin-top: 10px; }
-.slot { width: 74px; height: 104px; margin: 0px 7px; }
-.frame { width: 74px; height: 104px; position: absolute; left: 0px; top: 0px; }
-.cost-dot { position: absolute; left: 3px; top: 3px; width: 17px; height: 17px; border-radius: 9px; background-color: #f0ead0; align-items: center; justify-content: center; }
+.bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.panel { position: absolute; left: 22%; top: 2.362vh; width: 56%; height: 95%; flex-direction: column; align-items: center; background-color: rgba(12,12,22,0.85); border-radius: 3.937vh; }
+.title { font-size: 2.66vw; color: #e8d9a0; font-weight: bold; margin-top: 2.362vh; }
+.gold { font-size: 2.03vw; color: #ffd76a; margin-top: 2.362vh; }
+.sub { font-size: 1.72vw; color: #b8b0c8; margin-top: 1.575vh; }
+.cards { flex-direction: row; margin-top: 3.937vh; }
+.slot { width: 9.250vw; height: 40.945vh; margin: 0 0.875vw; }
+.frame { width: 9.250vw; height: 40.945vh; position: absolute; left: 0; top: 0; }
+.cost-dot { position: absolute; left: 0.375vw; top: 1.181vh; width: 2.125vw; height: 2.125vw; border-radius: 1.125vw; background-color: #f0ead0; align-items: center; justify-content: center; }
 .cost-t { font-size: 1.72vw; color: #151320; font-weight: bold; }
-.cname { position: absolute; left: 0px; top: 23px; width: 88px; font-size: 1.88vw; color: #f0e8d8; text-align: center; }
-.cdesc { position: absolute; left: 7px; top: 44px; width: 74px; height: 70px; font-size: 1.41vw; color: #c8c0d8; text-align: center; overflow: hidden; }
-.skip { width: 90px; height: 24px; background-color: #33334d; border-radius: 6px; align-items: center; justify-content: center; margin-top: 7px; }
+.cname { position: absolute; left: 0; top: 9.055vh; width: 11.000vw; font-size: 1.88vw; color: #f0e8d8; text-align: center; }
+.cdesc { position: absolute; left: 0.875vw; top: 17.323vh; width: 9.250vw; height: 27.559vh; font-size: 1.41vw; color: #c8c0d8; text-align: center; overflow: hidden; }
+.skip { width: 11.250vw; height: 9.449vh; background-color: #33334d; border-radius: 2.362vh; align-items: center; justify-content: center; margin-top: 2.756vh; }
 .skip-t { font-size: 1.88vw; color: #ccccdd; }
 </style>

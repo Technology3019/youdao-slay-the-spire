@@ -33,7 +33,22 @@ class App extends $falcon.App {
     // 屏幕分辨率适配机制:
     // 当 viewPort 设置750时, 所有元素尺寸可按照设计稿为 750px 宽度标准编写,
     // 最后系统会动态计算屏幕实际尺寸并显示.
-    this.setViewPort(800)  // 真机验证：800 设计宽度适配 X5 800x254
+    // 多机型自适应：以【宽度】为 vw 基准，以真实高度为 vh 基准。
+    // viewPort 取真实宽度后，1vw == 画布宽/实际宽，1vh == 画布高/实际高，
+    // X5Pro(640x260) 与 X7(960x266) 都能按自身尺寸正确缩放，正方形不会变形。
+    let w = 0, h = 0
+    try {
+      const env = (typeof $falcon !== 'undefined' && $falcon.env) || (typeof WXEnvironment !== 'undefined' ? WXEnvironment : null)
+      if (env) {
+        w = env.deviceWidth || env.width || 0
+        h = env.deviceHeight || env.height || 0
+      }
+    } catch (e) { w = 0 }
+    if (!w) w = 640
+    if (!h) h = Math.round(w * 254 / 800)
+    this.setViewPort(w)
+    this.screenW = w
+    this.screenH = h
 
     // 设置页面基类,应用全局的$falcon.Page将被替换成此处指定的BasePage.
     // 继承自$falcon.Page的页面将继承自改基类.

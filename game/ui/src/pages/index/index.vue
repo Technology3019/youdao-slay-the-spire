@@ -23,9 +23,9 @@
 <style lang="less" scoped>
 @import url('index.less');
 .over-wrap { width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; }
-.over-text { font-size: 20px; color: #e8d9a0; font-weight: bold; margin-bottom: 18px; }
-.over-btn { width: 140px; height: 34px; background-color: #33334d; border-radius: 8px; align-items: center; justify-content: center; }
-.over-btn-t { font-size: 13px; color: #ccccdd; }
+.over-text { font-size: 7.874vh; color: #e8d9a0; font-weight: bold; margin-bottom: 7.087vh; }
+.over-btn { width: 17.500vw; height: 13.386vh; background-color: #33334d; border-radius: 3.150vh; align-items: center; justify-content: center; }
+.over-btn-t { font-size: 5.118vh; color: #ccccdd; }
 </style>
 
 <script>

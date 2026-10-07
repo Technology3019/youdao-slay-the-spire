@@ -26,10 +26,10 @@ export default defineComponent({
 </script>
 <style scoped>
 .rest-root { width: 100%; height: 100%; }
-.bg { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
-.panel { position: absolute; left: 30%; top: 40px; width: 40%; height: 174px; flex-direction: column; align-items: center; background-color: rgba(12,12,22,0.85); border-radius: 10px; }
-.title { font-size: 3.13vw; color: #e8d9a0; font-weight: bold; margin-top: 14px; }
-.sub { font-size: 1.88vw; color: #b8b0c8; margin-top: 8px; }
-.opt { width: 230px; height: 36px; background-color: #33334d; border-radius: 8px; align-items: center; justify-content: center; margin-top: 14px; }
+.bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.panel { position: absolute; left: 30%; top: 15.748vh; width: 40%; height: 68.504vh; flex-direction: column; align-items: center; background-color: rgba(12,12,22,0.85); border-radius: 3.937vh; }
+.title { font-size: 3.13vw; color: #e8d9a0; font-weight: bold; margin-top: 5.512vh; }
+.sub { font-size: 1.88vw; color: #b8b0c8; margin-top: 3.150vh; }
+.opt { width: 28.750vw; height: 14.173vh; background-color: #33334d; border-radius: 3.150vh; align-items: center; justify-content: center; margin-top: 5.512vh; }
 .opt-t { font-size: 2.03vw; color: #ccccdd; }
 </style>
